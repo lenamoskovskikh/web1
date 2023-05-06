@@ -1,0 +1,10 @@
+Flask==2.0.3
+Flask-Login==0.5.0
+Flask-WTF==1.0.0
+html5==0.0.9
+python-dotenv==0.19.1
+python-telegram-bot==13.11
+requests==2.27.1
+SQLAlchemy==1.4.31
+telegram==0.0.1
+WTForms==3.0.1

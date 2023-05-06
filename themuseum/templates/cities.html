@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <p align="center">
+        {% if not type and not day %}
+        <h6 class="display-6">CITIES</h6>
+        <div class="btn-group shadow mb-3 rounded" role="group" aria-label="Basic checkbox toggle button group">
+            <a role="button" class="btn btn-outline-success btn-sm" href="/cities/pekin/archi">ПЕКИН</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/cities/cancer/archi">ТОКИО</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/cities/virgin/archi">ГОНКОНГ</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/cities/scales/archi">ПАРИЖ</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/cities/sagittarius/archi">НЬЮ-ЙОРК</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/cities/aquarius/archi">СИНГАПУР</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/cities/fish/archi">ОСЛО</a>
+        </div>
+        <br><span style="font-family: Times New Roman, serif; font-size: 160%;">About culture and architecture of other countries</span>
+        <img src="{{url_for('static', filename='img/cities/city.jpg')}}" alt="Здесь должна была быть картинка">
+
+
+        {% elif type == "pekin" %}
+<!--        Телец-->
+        <h6 class="display-6">  ПЕКИН </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/pekin/archi">архитектура</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/pekin/cult">культура</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/pekin.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/pekin.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/cities/choice">Посмотреть другой гороскоп</a>
+
+
+
+        {% elif type == "cancer" %}
+<!--        Рак-->
+        <h6 class="display-6"> ТОКИО </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/cancer/archi">архитектура</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/cancer/cult">культура</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/tokyo.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/tokyo.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/cities/choice">Посмотреть другой гороскоп</a>
+
+
+
+
+        {% elif type == "virgin" %}
+<!--        Дева-->
+        <h6 class="display-6"> ГОНКОНГ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/virgin/archi">архитектура</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/virgin/cult">культура</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/gonkong.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/gonkong.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/cities/choice">Посмотреть другой гороскоп</a>
+
+
+
+        {% elif type == "scales" %}
+<!--        Весы-->
+        <h6 class="display-6"> ПАРИЖ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/scales/archi">архитектура</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/scales/cult">культура</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/paris.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/paris.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/cities/choice">Посмотреть другой гороскоп</a>
+
+
+
+
+        {% elif type == "sagittarius" %}
+<!--        Стрелец-->
+        <h6 class="display-6"> НЬЮ-ЙОРК </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/sagittarius/archi">архитектура</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/sagittarius/cult">культура</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/newyork.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/newyork.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/cities/choice">Посмотреть другой гороскоп</a>
+
+
+
+        {% elif type == "aquarius" %}
+<!--        Водолей-->
+        <h6 class="display-6"> СИНГАПУР </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/aquarius/archi">архитектура</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/aquarius/cult">культура</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/singapur.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/singapur.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/cities/choice">Посмотреть другой гороскоп</a>
+
+
+
+        {% elif type == "fish" %}
+<!--        Рыбы-->
+        <h6 class="display-6"> ОСЛО </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/fish/archi">архитектура</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/cities/fish/cult">культура</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/oslo.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/cities/oslo.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/cities/choice">Посмотреть другой гороскоп</a>
+        {% endif %}
+    </p>
+</body>
+{% endblock %}
