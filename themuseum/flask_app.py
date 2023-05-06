@@ -45,12 +45,7 @@ def index():
     for file in files_to_delete:
         if os.path.exists(f'static/img/{file}'):
             os.remove(f'static/img/{file}')
-    with open("static/txt/about.txt", "r", encoding="utf-8") as about:
-        data_about = about.read()
-    with open("static/txt/terms.txt", "r", encoding="utf-8") as terms:
-        data_terms = terms.readlines()
-    data_terms = list(map(lambda x: x.rstrip(), data_terms))
-    return render_template("main.html", title='Главная', about=data_about, terms=data_terms, photo=get_image())
+    return render_template("main.html", title='Главная', photo=get_image())
 
 
 @app.route('/profile', methods=['POST', 'GET'])
@@ -102,7 +97,7 @@ def reqister():
         if len(pswd) > 20 or len(pswd) < 8 or pswd.isdigit() or pswd.islower():
             return render_template('register.html', title='Регистрация',
                                    form=form, message="Пароль не надёжный, подумай ещё", photo=get_image())
-        pswd = None  # политика конфиденциальности, нигде не сохраняем не хэшированный пароль пользователя
+        pswd = None
         db_sess = db_session.create_session()
         if db_sess.query(User).filter(User.email == form.login.data).first():
             return render_template('register.html', title='Регистрация', form=form,
@@ -135,8 +130,7 @@ def show_places():
 
 
 @app.route('/cities/<type>')
-@app.route('/cities/<type>/<day>')
-def horoscope(type, day='today'):
+def horoscope(type):
     city = type
     with open('static/txt/cities.txt', encoding='utf-8') as file:
         text_and_picture = file.read().replace('\n', '').split('***')
@@ -150,7 +144,7 @@ def horoscope(type, day='today'):
                 print(text)
                 print(img)
 
-    return render_template("cities.html", title='cities', type=city, day=day, date=date, forecast=text, photo=get_image())
+    return render_template("cities.html", title='cities', type=city, forecast=text, photo=get_image())
 
 
 @app.errorhandler(404)
